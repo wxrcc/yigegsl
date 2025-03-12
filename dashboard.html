@@ -1,17 +1,133 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一个栏</title>
-    <link rel="stylesheet" href="/yigegsl/dashboard.css">
+    <title>仪表盘</title>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+    
     <div class="container">
-        <button class="btn" onclick="navigate('manager')">领班</button>
-        <button class="btn" onclick="navigate('staff')">员工</button>
-        <button class="btn" onclick="navigate('bulletin')">公示栏</button>
+        <div class="header">
+        <div class="button-container">
+            <button class="btn" onclick="showContent('manager')">领班信息</button>
+            <button class="btn" onclick="showContent('staff')">员工信息</button>
+            <button class="btn" onclick="showContent('bulletin')">公告信息</button>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="搜索页面内容...">
+            <button class="search-btn" onclick="searchPage()">搜索</button>
+        </div>
+   
+        <div class="main-content">
+            <div id="managerContent" class="content-area" style="display: none;">
+              <h3>店内游戏活动</h3>
+              
+              <div class="game-section">
+                <h4>英雄联盟</h4>
+                <ul>
+                  <li>黄金及以上段位单双排5杀</li>
+                  <li>黄金及以上段位单双排五连胜</li>
+                </ul>
+              </div>
+
+              <div class="game-section">
+                <h4>云顶之弈</h4>
+                <ul>
+                  <li>铂金（含铂金）以上段位吃鸡</li>
+                </ul>
+              </div>
+
+              <div class="game-section">
+                <h4>永劫无间</h4>
+                <ul>
+                  <li>陨星段位吃鸡且击杀5人（含5人）</li>
+                  <li>蚀月段位吃鸡且击杀3人（含3人）</li>
+                  <li>坠日段位及以上吃鸡</li>
+                </ul>
+              </div>
+
+              <div class="game-section">
+                <h4>绝地求生</h4>
+                <ul>
+                  <li>黄金及以上段位吃鸡且5次击杀</li>
+                  <li>钻石及以上段位吃鸡</li>
+                </ul>
+              </div>
+
+              <div class="game-section">
+                <h4>CSGO</h4>
+                <ul>
+                  <li>完美平台C+及以上排位赛30击杀奖励</li>
+                  <li>E平台1400分及以上排位赛30击杀奖励</li>
+                </ul>
+              </div>
+
+              <div class="game-section">
+                <h4>无畏契约</h4>
+                <ul>
+                  <li>铂金段位击杀28且胜利</li>
+                  <li>钻石段位以上（含钻石）击杀18且胜利</li>
+                </ul>
+              </div>
+
+              <div class="notice">
+                <p>以上活动奖励均为18网费！</p>
+                <p class="warning">注意⚠️：以上游戏奖励每天只可奖励充值一次，必须在店内进行的游戏对局才可以</p>
+              </div>
+            </div>
+
+            </div>
+
+
+            <div id="staffContent" class="content-area" style="display: none;">
+              <h3>📝 线上好评任务</h3>
+              <div class="task-section">
+                <p>🎯 目标：每个班次每人好评≥2条</p>
+                <ul>
+                  <li>⭐ 普通好评：
+                    <ul>
+                      <li>要求：3图+15字以上</li>
+                      <li>顾客奖励：10网费 或 500ml可乐/雪碧</li>
+                    </ul>
+                  </li>
+                  <li>🌟 优质好评：
+                    <ul>
+                      <li>要求：3图+100字以上</li>
+                      <li>顾客奖励：20网费 或 500ml可乐/雪碧</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>🎁 员工奖励：每条好评10元网费 💰</p>
+              </div>
+            </div>
+
+
+
+            <div id="bulletinContent" class="content-area" style="display: none;">
+                <h3>公示栏</h3>
+                <p>今日公告：安全培训通知</p>
+                <p>重要事项：设备维护计划</p>
+                <p>温馨提示：注意防暑降温</p>
+            </div>
+            <div id="bulletinContent_1" class="content-area" style="display: none;">
+                <h3>微信通知</h3>
+                <p>最新通知：请关注企业微信</p>
+                <p>重要提醒：及时查看工作群消息</p>
+                <p>联系方式：企业微信-通讯录</p>
+            </div>
+            <div id="bulletinContent_2" class="content-area" style="display: none;">
+                <h3>微信通知</h3>
+                <p>最新通知：请关注企业微信</p>
+                <p>重要提醒：及时查看工作群消息</p>
+                <p>联系方式：企业微信-通讯录</p>
+            </div>
+            
+        </div>
+   
     </div>
-    <script src="/yigegsl/dashboard.js"></script>
+    <div class="mask"></div>
+    <script src="dashboard.js"></script>
 </body>
 </html>

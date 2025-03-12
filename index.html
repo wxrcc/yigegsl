@@ -79,7 +79,13 @@
             margin-top: 0.5rem;
             display: none;
         }
-
+        .right {
+            position: fixed;
+            bottom: 0;
+            right: 1%;
+            color: #ffffff;
+            font-weight: bold;
+        }
   
 
     </style>
@@ -100,7 +106,9 @@
             <button type="submit" class="btn">登录</button>
         </form>
     </div>
-
+    <div class="right">
+        <p>V1.0.0 测试版</p>
+    </div>
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -110,7 +118,7 @@
             const errorMessage = document.getElementById('errorMessage');
 
             // 简单的验证逻辑
-            if (username === 'zxp' && password === '520') {
+            if (username === 'lsdjhjm' && password === '123456.') {
                 errorMessage.style.display = 'none';
                 window.location.href = 'dashboard.html';
             } else {
